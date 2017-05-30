@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Webpack test</title>
+	</head>
+	<body>
+		--------
+		<div id="header">
+		</div>
+		--------
+		<div id="footer">
+		</div>
+		<div id="dialog" title="Basic dialog">
+			<p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+		</div>
+		<script type="text/javascript">
+			// vendors
+			var s = document.createElement('script');
+			s.type = 'text/javascript';
+			s.src = '<%= htmlWebpackPlugin.files.chunks["vendor"].entry %>';
+			s.async = false;
+			document.head.appendChild(s);
+			// bundle
+			var s = document.createElement('script');
+			s.type = 'text/javascript';
+			s.src = '<%= htmlWebpackPlugin.files.chunks["bundle"].entry %>';
+			s.async = false;
+			document.head.appendChild(s);
+		</script>
+	</body>
+</html>
